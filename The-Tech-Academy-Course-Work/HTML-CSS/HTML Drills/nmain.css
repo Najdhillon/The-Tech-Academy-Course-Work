@@ -1,0 +1,163 @@
+@charset="UTF-8"
+
+/* the display block is used for the HTML5 elements can be formatted correctly */
+
+
+article, aside, footer, header, main, nav, section {
+  display: block;
+
+ }
+
+ /* Spacing between all the elements */
+
+html, body, h1, h2, h3, ul, li, a, p, 
+article, aside, footer, header, main, nav, section {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* body consisting of the following elements: nav, article, section, */
+
+body {
+
+	background-color: gray;
+	font-style: Arial;
+	font-size: 11px;
+	margin-right: auto;
+	margin-left: auto;
+
+
+}
+
+/* Top Nav Links */
+
+nav {
+
+	padding-top:50px;
+	background-color: black;
+	color: white;
+	position: relative;
+}
+
+ul {
+
+	color:white;
+}
+
+
+li {
+
+		display: inline;
+		margin-left: 25px;
+		margin-right: 25px;
+		font-size: 20px;
+
+		
+		
+}
+
+
+li a{
+
+	color:white;
+	text-decoration: none;
+
+}
+
+hD {
+
+	display: inline;
+	font-size: 15px
+}
+
+/* First Nav part, division containing Naj Dhillon */
+
+#n1 {
+		float: left;
+		position:relative; bottom: 35px; 
+		width: 55%;
+		height:.01%;
+		letter-spacing: 4px;
+		padding-left: 30px;
+
+
+
+
+}
+
+/* Second Nav part, division containing nav links on top */
+
+#n2	{
+
+	float: right;
+	position:relative; bottom: 35px;	
+	width: 45%;
+	height:.01%;
+	letter-spacing: 2px;
+
+}
+
+
+
+/* Article elements containing image */
+
+article {
+
+	background-color: silver;
+	margin:0px;
+	
+	
+}
+
+
+/* Image displayed to the left. Border selector misspelled on purpose */
+
+img{
+
+	width: 600px;
+	height: 400px;
+	bordr: 1px solid;
+	vertical-align: middle; 
+	
+
+}
+
+
+
+#aboutmetext {
+
+	float: rigt;
+	width: 300px;
+	height:300px;
+
+	boder: 1px solid;
+	display:inline;
+	
+	margin-left: 25px;
+	margin-right: auto;
+	font-size: 20px;
+
+
+}
+
+/* A litte introduction next to the image */
+
+
+
+
+footer {
+
+	background: black;
+	color:white;
+	margin-bottom: auto
+
+	}
+
+footer p {
+
+	width:100%;
+	height: auto;
+	text-align: center;
+	letter-spacing: 10px;
+	font-size: 20px;
+}
