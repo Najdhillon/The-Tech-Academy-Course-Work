@@ -1,0 +1,92 @@
+#Creating the first function
+
+def letsAdd(x,y):
+    addition = x + y
+    return addition
+
+#Inputing values in for x and y
+
+print letsAdd(3,5)
+
+#Checking out errors
+
+someValue = 5
+
+def letsAdd(x,y):
+    addition = x + y
+    someValue = 10
+    return addition
+
+print letsAdd(3,5)
+print someValue
+
+
+#Make function called subtraction
+
+def subtraction(x,y):
+    subtract=x-y
+    return subtract
+
+print subtraction(10,4)
+
+#Making a function with three variables
+
+def moreSubtraction(x,y,z):
+    subtract=x-y-z
+    return subtract
+print moreSubtraction(40,3,11)
+
+#Making a function with multipication
+
+def multipy(x,y):
+    mult=x*y
+    return mult
+
+print multipy(2,2)
+
+#A division function
+
+def division(x,y):
+    divide=x/y
+    return divide
+
+print division(4,2)
+
+print division(2,4)
+
+#Division function with float function
+
+def divMode(x,y):
+    divide=float(x)/float(y)
+    return divide
+
+print divMode(2,4)
+    
+
+# Built in functions in Python
+# Len() function
+
+length = len('How many characters did I just type')
+
+print length
+
+#str() function
+
+x = 23
+print str(x)
+
+# float function
+
+y = float(40)/float(7)
+print y
+
+#Converting decimals to intergers
+
+yInt = int(y)
+print y
+
+#Using round function to round y
+
+print round(y)
+
+print int(round(y))
