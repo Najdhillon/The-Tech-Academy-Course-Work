@@ -1,0 +1,41 @@
+
+#Making a dictionary
+
+epic_names_dict = {'Q-tip':'q@gmail.com',
+                   'Phife Dawg':'p@gmail.com',
+                   'Nas':'n@gmail.com'}
+
+
+print epic_names_dict
+
+#Adding numbers along with e-mails
+
+epic_names_dict = {'Q-tip':['q@gmail.com',444],
+                   'Phife Dawg':['p@gmail.com',445],
+                   'Nas':['n@gmail.com',446]}
+
+print epic_names_dict
+
+#Retrieving back list of Q-tip back
+
+print epic_names_dict['Q-tip']
+
+#Retrieving back the particular information of Q-tip
+
+#Getting the email
+
+print epic_names_dict['Q-tip'][0]
+
+#Getting the number back
+
+print epic_names_dict['Q-tip'][1]
+
+#Entering a name, and getting an answer back
+
+personNames = raw_input("Who are you looking for?")
+
+personInfo = epic_names_dict[personNames]
+
+print personInfo
+
+
