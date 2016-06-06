@@ -1,18 +1,18 @@
 import shutil, os
 from datetime import datetime, timedelta
-from time import time
+import time
 
 
 ##srcpath = '/Users/Naj/Desktop/TA/DailyFile/test.txt'
 
-destpath = '/Users/Naj/Desktop/TA/MoveFile'
+destpath = 'C:\\Users\\navjot.dhillon\\Desktop\MoveFile\\'
 
 ##print curDir
 
-os.chdir('/Users/Naj/Desktop/TA/DailyFile')
+os.chdir('C:\\Users\\navjot.dhillon\\Desktop\DailyFile\\')
 
 
-checkfolder = os.listdir('/Users/Naj/Desktop/TA/DailyFile')
+checkfolder = os.listdir('C:\\Users\\navjot.dhillon\\Desktop\\DailyFile\\')
 
 ##print checkfolder
 
@@ -20,7 +20,7 @@ checkfolder = os.listdir('/Users/Naj/Desktop/TA/DailyFile')
 ##movefile = shutil.move(destpath, srcpath)
 
 
-checkLastAccess = os.stat(srcpath)
+#checkLastAccess = os.stat(srcpath)
 
 ##print checkLastAccess
 
@@ -29,12 +29,17 @@ for f in checkfolder:
 
     modtime = os.stat(f).st_mtime
 
-    modtimets = (datetime.fromtimestamp(modtime))
+    #modtimets = (datetime.fromtimestamp(modtime)) - this was not working(ND)
 
-    check = modtimets - timedelta(hours = 24)
+    
+    check = time.time()- 3600
+    
+    #check = modtime - timedelta(hours = 24)
 
-    if check < modtimets:
+    if modtime <= check:
+        
+        if f.endswith(".txt"):
 
-        shutil.copy(f, destpath)
+            shutil.copy(f, destpath)
 
-        print('files have been copied at the correct folder')
+            print('files have been copied at the correct folder')
