@@ -3,47 +3,34 @@ from datetime import datetime, timedelta
 import time
 
 
-##srcpath = '/Users/Naj/Desktop/TA/DailyFile/test.txt'
 
-##destpath = 'C:\\Users\\navjot.dhillon\\Desktop\MoveFile\\'
+os.chdir('C:\\Users\\navjot.dhillon\\Desktop\DailyFile\\')
 
-##print curDir
+srcf = ('C:\\Users\\navjot.dhillon\\Desktop\DailyFile\\')
+destf = ('C:\\Users\\navjot.dhillon\\Desktop\MoveFile\\')
 
-os.chdir('/Users/Naj/Desktop/TA/DailyFile/')
+for f in os.listdir(srcf):
 
-
-checkfolder = os.listdir('/Users/Naj/Desktop/TA/DailyFile/')
-
-##print checkfolder
-
-
-##movefile = shutil.move(destpath, srcpath)
-
-
-#checkLastAccess = os.stat(srcpath)
-
-##print checkLastAccess
-
-
-for f in checkfolder:
+    src = os.path.join(srcf,f)
+    dest = os.path.join(destf,f)
     
     if f.endswith(".txt"):
 
-        modtime = os.stat(f).st_mtime
+        # Last Mod time calculation
+
+        modtime = time.time() - (os.path.getmtime(src))
 
         #modtimets = (datetime.fromtimestamp(modtime)) - this was not working(ND)
 
-        
-        check = time.time()- (24*60*60)
+        h24ago = time.time() - (24*60*60)
+
+        last24 = time.time() - h24ago
         
         #check = modtime - timedelta(hours = 24)
 
-        if modtime >= check:
+        if modtime < last24:
 
-                src = '/Users/Naj/Desktop/TA/DailyFile/{}'.format(f)
-
-                dst = '/Users/Naj/Desktop/TA/MoveFile/{}'.format(f) 
-
-                shutil.copy(src, dst)
-
-                print('files have been copied at the correct folder')
+                shutil.copy(src, dest)
+                print '{} has been copied to {}'.format(src,dest)
+                
+                
