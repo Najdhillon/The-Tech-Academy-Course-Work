@@ -28,40 +28,50 @@ class Frame(wx.Frame):
         dlg = wx.DirDialog(self, "Choose a folder:",
                            style=wx.DD_DEFAULT_STYLE)
         if dlg.ShowModal() == wx.ID_OK:
-            checkfolder = dlg.GetPath()
-            print checkfolder
+            src = dlg.GetPath()
+            
+            print src
 
     # Method for opening the file directory to select destination folder        
 
 
     def onDirDest(self, event):
 
+
         dlg = wx.DirDialog(self, "Choose a folder:",
                            style=wx.DD_DEFAULT_STYLE)
         if dlg.ShowModal() == wx.ID_OK:
-            destpath = dlg.GetPath()
-            print destpath
+            dst = dlg.GetPath()
+            
+            print dst
 
     def executeCopy(self, event):
-        
-        for f in checkfolder:
 
-            modtime = os.stat(f).st_mtime
-
-            #modtimets = (datetime.fromtimestamp(modtime)) - this was not working(ND)
-
+        src = onDirSource.sc
+        dst = onDirDest.dst
+ 
+        for f in src:
             
-            check = time.time()- 3600
-            
-            #check = modtime - timedelta(hours = 24)
+            if f.endswith(".txt"):
 
-            if modtime <= check:
+                modtime = os.stat(f).st_mtime
+
+                #modtimets = (datetime.fromtimestamp(modtime)) - this was not working(ND)
+
                 
-                if f.endswith(".txt"):
+                check = time.time()- (24*60*60)
+                
+                #check = modtime - timedelta(hours = 24)
 
-                    shutil.copy(f, destpath)
+                if modtime >= check:
 
-                    print('files have been copied at the correct folder')
+                        #src = '/Users/Naj/Desktop/TA/DailyFile/{}'.format(f)
+
+                        #dst = '/Users/Naj/Desktop/TA/MoveFile/{}'.format(f) 
+
+                        shutil.copy(src, dst)
+
+                        print('files have been copied at the correct folder')
         
 
     # Method for exit   

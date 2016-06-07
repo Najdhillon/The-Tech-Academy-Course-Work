@@ -5,14 +5,14 @@ import time
 
 ##srcpath = '/Users/Naj/Desktop/TA/DailyFile/test.txt'
 
-destpath = 'C:\\Users\\navjot.dhillon\\Desktop\MoveFile\\'
+##destpath = 'C:\\Users\\navjot.dhillon\\Desktop\MoveFile\\'
 
 ##print curDir
 
-os.chdir('C:\\Users\\navjot.dhillon\\Desktop\DailyFile\\')
+os.chdir('/Users/Naj/Desktop/TA/DailyFile/')
 
 
-checkfolder = os.listdir('C:\\Users\\navjot.dhillon\\Desktop\\DailyFile\\')
+checkfolder = os.listdir('/Users/Naj/Desktop/TA/DailyFile/')
 
 ##print checkfolder
 
@@ -26,20 +26,24 @@ checkfolder = os.listdir('C:\\Users\\navjot.dhillon\\Desktop\\DailyFile\\')
 
 
 for f in checkfolder:
-
-    modtime = os.stat(f).st_mtime
-
-    #modtimets = (datetime.fromtimestamp(modtime)) - this was not working(ND)
-
     
-    check = time.time()- 3600
-    
-    #check = modtime - timedelta(hours = 24)
+    if f.endswith(".txt"):
 
-    if modtime <= check:
+        modtime = os.stat(f).st_mtime
+
+        #modtimets = (datetime.fromtimestamp(modtime)) - this was not working(ND)
+
         
-        if f.endswith(".txt"):
+        check = time.time()- (24*60*60)
+        
+        #check = modtime - timedelta(hours = 24)
 
-            shutil.copy(f, destpath)
+        if modtime >= check:
 
-            print('files have been copied at the correct folder')
+                src = '/Users/Naj/Desktop/TA/DailyFile/{}'.format(f)
+
+                dst = '/Users/Naj/Desktop/TA/MoveFile/{}'.format(f) 
+
+                shutil.copy(src, dst)
+
+                print('files have been copied at the correct folder')
