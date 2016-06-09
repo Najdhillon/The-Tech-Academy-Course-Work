@@ -1,4 +1,6 @@
-import wx
+import wx, shutil, os, time
+from datetime import datetime, timedelta
+
 
 class Frame(wx.Frame):
    
@@ -25,12 +27,13 @@ class Frame(wx.Frame):
         
     def onDirSource(self, event):
 
-        dlg = wx.DirDialog(self, "Choose a folder:",
+        dlg = wx.DirDialog(None, "Choose a folder:",
                            style=wx.DD_DEFAULT_STYLE)
         if dlg.ShowModal() == wx.ID_OK:
-            src = dlg.GetPath()
-            
-            print src
+            srcf = dlg.SetPath()
+
+        return srcf
+        dlg.Destroy()
 
     # Method for opening the file directory to select destination folder        
 
@@ -38,41 +41,42 @@ class Frame(wx.Frame):
     def onDirDest(self, event):
 
 
-        dlg = wx.DirDialog(self, "Choose a folder:",
+        dlg = wx.DirDialog(None, "Choose a folder:",
                            style=wx.DD_DEFAULT_STYLE)
         if dlg.ShowModal() == wx.ID_OK:
-            dst = dlg.GetPath()
+            dstf = dlg.SetPath()
             
-            print dst
+        return dstf
+
+        dlg.Destroy()
 
     def executeCopy(self, event):
 
-        src = onDirSource.sc
-        dst = onDirDest.dst
- 
-        for f in src:
+        srcf = onDirSource()
+        destf = onDirDest()
+
+        src = os.path.join(srcf,f)
+        dest = os.path.join(destf,f)
+    
+        if f.endswith(".txt"):
+
+            # Last Mod time calculation
+
+            modtime = time.time() - (os.path.getmtime(src))
+
+            #modtimets = (datetime.fromtimestamp(modtime)) - this was not working(ND)
+
+            h24ago = time.time() - (24*60*60)
+
+            last24 = time.time() - h24ago
             
-            if f.endswith(".txt"):
+            #check = modtime - timedelta(hours = 24)
 
-                modtime = os.stat(f).st_mtime
+            if modtime < last24:
 
-                #modtimets = (datetime.fromtimestamp(modtime)) - this was not working(ND)
-
-                
-                check = time.time()- (24*60*60)
-                
-                #check = modtime - timedelta(hours = 24)
-
-                if modtime >= check:
-
-                        #src = '/Users/Naj/Desktop/TA/DailyFile/{}'.format(f)
-
-                        #dst = '/Users/Naj/Desktop/TA/MoveFile/{}'.format(f) 
-
-                        shutil.copy(src, dst)
-
-                        print('files have been copied at the correct folder')
-        
+                    shutil.copy(src, dest)
+                    print '{} has been copied to {}'.format(src,dest)
+            
 
     # Method for exit   
 
