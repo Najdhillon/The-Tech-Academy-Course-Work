@@ -1,6 +1,11 @@
+<<<<<<< Updated upstream
 import wx, shutil, os, time
 from datetime import datetime, timedelta
 
+=======
+import wx, time, shutil, os
+from datetime import datetime, timedelta
+>>>>>>> Stashed changes
 
 class Frame(wx.Frame):
    
@@ -52,6 +57,7 @@ class Frame(wx.Frame):
 
     def executeCopy(self, event):
 
+<<<<<<< Updated upstream
         srcf = onDirSource()
         destf = onDirDest()
 
@@ -59,9 +65,28 @@ class Frame(wx.Frame):
         dest = os.path.join(destf,f)
     
         if f.endswith(".txt"):
+=======
+        srcf = self.onDirSource()
+        destf = self.onDirDest()
+
+        #srcf = ('C:\\Users\\navjot.dhillon\\Desktop\DailyFile\\')
+        #destf = ('C:\\Users\\navjot.dhillon\\Desktop\MoveFile\\')
+
+        for f in os.listdir(srcf):
+
+            src = os.path.join(srcf,f)
+            dest = os.path.join(destf,f)
+            
+            if f.endswith(".txt"):
+
+                # Last Mod time calculation
+
+                modtime = time.time() - (os.path.getmtime(src))
+>>>>>>> Stashed changes
 
             # Last Mod time calculation
 
+<<<<<<< Updated upstream
             modtime = time.time() - (os.path.getmtime(src))
 
             #modtimets = (datetime.fromtimestamp(modtime)) - this was not working(ND)
@@ -77,6 +102,19 @@ class Frame(wx.Frame):
                     shutil.copy(src, dest)
                     print '{} has been copied to {}'.format(src,dest)
             
+=======
+                h24ago = time.time() - (24*60*60)
+
+                last24 = time.time() - h24ago
+                
+                #check = modtime - timedelta(hours = 24)
+
+                if modtime < last24:
+
+                        shutil.copy(src, dest)
+                        print '{} has been copied to {}'.format(src,dest)
+        
+>>>>>>> Stashed changes
 
     # Method for exit   
 
