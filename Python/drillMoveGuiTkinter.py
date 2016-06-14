@@ -6,18 +6,20 @@ import shutil, os, time
 
 
 
-def addSource () :
-        sdirectory.set(filedialog.askdirectory())
-        return
+def addSource() :
+        global sdirect
+        sdirect = filedialog.askdirectory()
+        return sdirect
 
 def addDest() :
-
-        ddirectory.set(filedialog.askdirectory())
-        return
+        global ddirect
+        ddirect = filedialog.askdirectory()
+        return ddirect
 
 def beginCopy() :
-        srcf = sdirectory
-        destf = ddirectory
+        
+        srcf = sdirect
+        destf = ddirect
 
         for f in os.listdir(srcf):
 
@@ -41,24 +43,16 @@ def beginCopy() :
                 if modtime < last24:
 
                         shutil.copy(src, dest)
-                        print('{} has been copied to {}').format(src,dest)
+                        print('{} has been copied to {}'.format(src,dest))
 
-def exitApp  () :
-    name, phone = phonelist[whichSelected()]
-    nameVar.set(name)
-    phoneVar.set(phone)
+    
 
 def makeWindow () :
-        
-    global sdirectory, ddirectory
-
+    global root    
     root = Tk()
 
     frame1 = Frame(root)
     frame1.pack()
-
-    sdirectory = StringVar()
-    ddirectory = StringVar()
 
     Label(frame1, text="Choose your Source").grid(row=0, column=0, sticky=W)
     
@@ -75,8 +69,6 @@ def makeWindow () :
     b3 = Button(frame1,text="Start",command=beginCopy)
     b3.grid(row=2, column=1, sticky=W)
 
-    b4 = Button(frame1,text="Exit",command=exitApp)
-    b4.grid(row=3, column=1, sticky=W)
 
 
 
