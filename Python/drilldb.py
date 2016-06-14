@@ -2,29 +2,38 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
-import shutil, os, time, sqlite3
-
-conn = sqlite3.connect('recentmodcheck.db')
-
-def createTab():
-
-    conn.execute("CREATE TABLE if not exists RECENTMOD(ID Integer Primary Key Autoincrement,Dates INT);") 
-    
-createTab()
+import shutil, os, time, sqlite3,datetime
 
 
-def addSource () :
-        sdirectory.set(filedialog.askdirectory())
-        return
+
+def addSource() :
+        global sdirect
+        sdirect = filedialog.askdirectory()
+        return sdirect
 
 def addDest() :
+        global ddirect
+        ddirect = filedialog.askdirectory()
+        return ddirect
 
-        ddirectory.set(filedialog.askdirectory())
-        return
+
+conn = sqlite3.connect('drilldb.db')
+c = conn.cursor()
+
+c.execute('CREATE TABLE IF NOT EXISTS addStuff(ID INTEGER PRIMARY KEY AUTOINCREMENT, modtime INTEGER)')
+
+def dynamic_data_entry():
+
+    unix = time.time()
+    date = str(datetime.datetime.fromtimestamp(unix).strftime('%Y-%m-%d %H:%M:%S'))
+    c.execute("INSERT INTO addSTUFF (modtime) VALUES (?)", (date,))
+
+    conn.commit()
 
 def beginCopy() :
-        srcf = sdirectory
-        destf = ddirectory
+        
+        srcf = sdirect
+        destf = ddirect
 
         for f in os.listdir(srcf):
 
@@ -48,26 +57,17 @@ def beginCopy() :
                 if modtime < last24:
 
                         shutil.copy(src, dest)
-                        print('{} has been copied to {}').format(src,dest)
-                        insertmtime = "INSERT INTO RECENTMOD(Dates)VALUES({})".format(modtime)
-                        conn.execute(insertmtime)
+                        print('{} has been copied to {}'.format(src,dest))
+                        dynamic_data_entry()
 
-def exitApp  () :
-    name, phone = phonelist[whichSelected()]
-    nameVar.set(name)
-    phoneVar.set(phone)
-
+    
+    
 def makeWindow () :
-        
-    global sdirectory, ddirectory
-
+    global root    
     root = Tk()
 
     frame1 = Frame(root)
     frame1.pack()
-
-    sdirectory = StringVar()
-    ddirectory = StringVar()
 
     Label(frame1, text="Choose your Source").grid(row=0, column=0, sticky=W)
     
@@ -84,8 +84,14 @@ def makeWindow () :
     b3 = Button(frame1,text="Start",command=beginCopy)
     b3.grid(row=2, column=1, sticky=W)
 
-    b4 = Button(frame1,text="Exit",command=exitApp)
-    b4.grid(row=3, column=1, sticky=W)
+    Label(frame1, text="Last File Check:").grid(row=3, column=0, sticky=W)
+
+    c.execute("SELECT MAX(modtime) FROM addStuff")
+    date = c.fetchall()
+
+    Label(frame1, text=date).grid(row=3, column=1, sticky=W)
+
+
 
 
 
