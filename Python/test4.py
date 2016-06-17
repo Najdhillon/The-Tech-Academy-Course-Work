@@ -1,8 +1,10 @@
-def larger_string(str, n):
-   result = ""
-   for i in range(n):
-      result = result + str
-   return result
+def list_count_4(nums):
+  count = 0  
+  for num in nums:
+    if num == 4:
+      count = count + 1
 
-print(larger_string('abc', 2))
-print(larger_string('.py', 3))
+  return count
+
+print(list_count_4([1, 4, 6, 7, 4]))
+print(list_count_4([1, 4, 6, 4, 7, 4]))

@@ -178,6 +178,32 @@ def larger_string(str, n):
 print(larger_string('yo', 5))
 
 
+# 21:
+
+num = int(input("Please provide a even or odd number: "))
+
+check = num % 2
+if check > 0:
+    print('odd number')
+
+else:
+
+    print('even number')
+
+
+#22:
+
+def list_count_4(nums):
+  count = 0  
+  for num in nums:
+    if num == 4:
+      count = count + 1
+
+  return count
+
+print(list_count_4([1, 4, 8, 7, 4]))
+print(list_count_4([4, 4, 4, 4, 4, 4]))
+
 
 
 
