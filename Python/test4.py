@@ -1,10 +1,10 @@
-def list_count_4(nums):
-  count = 0  
-  for num in nums:
-    if num == 4:
-      count = count + 1
+def histogram( items ):
+    for n in items:
+        output = ''
+        times = n
+        while( times > 0 ):
+          output += '*'
+          times = times - 1
+        print(output)
 
-  return count
-
-print(list_count_4([1, 4, 6, 7, 4]))
-print(list_count_4([1, 4, 6, 4, 7, 4]))
+histogram([2, 3, 6, 5])

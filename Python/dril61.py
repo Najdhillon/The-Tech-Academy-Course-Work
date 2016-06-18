@@ -205,7 +205,54 @@ print(list_count_4([1, 4, 8, 7, 4]))
 print(list_count_4([4, 4, 4, 4, 4, 4]))
 
 
+#Question 23:
+
+def substring_copy(str, n):
+  check = 2
+  if check > len(str):
+    check = len(str)
+  substr = str[:check]
+  
+  result = ""
+  for i in range(n):
+    result = result + substr
+  return result
 
 
+print(substring_copy('abcdef', 2))
+print(substring_copy('p', 3));
 
+#Question 24:
 
+def is_vowel(char):
+    vowels = 'aeiou'
+    return char in vowels
+           
+
+print(is_vowel('u'))
+
+#Question 25:
+
+def valuecheck(groupv, n):
+
+    for val in groupv:
+
+        if n == val:
+            return True
+        
+    return False
+
+print(valuecheck([1,2,3,4,5],6))
+
+#Question 26:
+
+def histogram( items ):
+    for n in items:
+        output = ''
+        times = n
+        while( times > 0 ):
+          output += '*'
+          times = times - 1
+        print(output)
+
+histogram([2, 3, 6, 5])
