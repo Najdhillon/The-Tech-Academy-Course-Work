@@ -256,3 +256,224 @@ def histogram( items ):
         print(output)
 
 histogram([2, 3, 6, 5])
+
+#Question 27:
+
+def connectstuff(list):
+
+    finish = ''
+
+    for parts in list:
+
+        finish += str(finish)
+    return finish
+
+print(connectstuff([1, ' pig', 2, ' pig']))
+
+#Question 28:
+
+numbers = [    
+    386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345, 
+    399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217, 
+    815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717, 
+    958,743, 527
+    ]
+
+for x in numbers:
+
+    if x == 248:
+
+        break
+
+    elif x % 2 == 0:
+
+        print(x)
+
+#Question 29:
+
+color_list_1 = set(["White", "Black", "Red"]) 
+color_list_2 = set(["Red", "Green"])
+
+print(color_list_1.difference(color_list_2))
+
+
+#Question 30:
+
+def findarea():
+
+    a = int(input('Input base: '))
+    b = int(input('Input height: '))
+
+    area = ((a * b)/2)
+    print(area)
+
+findarea()
+
+#Question 31:
+
+from fractions import gcd
+
+print(gcd(20,8))
+
+#question 32:
+
+from fractions import gcd
+
+def lcm(a,b):
+
+    return a * b // gcd(a,b)
+
+print(lcm(20,8))
+
+#Question 33:
+
+def sumThree(a,b,c):
+
+    if a == b or b == c or c == a:
+
+        total = 0
+
+    else:
+
+        total = a + b + c
+        return total
+
+print(sumThree(3,3,3))
+
+print(sumThree(3,5,4))
+
+
+#Question 34:
+
+def sumTwo(a,b):
+    
+    total = a + b
+
+    if total in range(15,20):
+
+        return 20
+
+    else:
+        
+        return total
+
+print(sumTwo(5,10))
+
+print(sumTwo(16,10))
+
+
+#Question 35:
+
+def sumdif(a,b):
+    
+    if a == 5 or b or b == 5 or abs(a-b) == 5 or (a+b) == 5:
+
+        return True
+
+    else:
+        
+        return False
+
+print(sumdif(2,2))
+
+print(sumdif(16,10))
+
+
+
+
+#Question 36:
+
+
+def add_num(a, b):  
+    if not (isinstance(a, int) and isinstance(b, int)):  
+         raise TypeError("Inputs must be integers")  
+    return a + b  
+  
+print(add_num(1, 2))
+
+print(add_num('test', 2))
+
+# Question 37:
+
+def pdetail():
+
+    name = 'Name'
+    age = '12'
+    addr = 'Merica'
+
+    print("Name: {} \nAge: {} \nAddress: {}".format(name,age, addr))
+
+
+pdetail()
+
+#Question 38:
+
+def q38(x,y):
+
+    eq = ((x+y) ** 2)
+    print(eq)
+
+
+q38(5,5)
+
+
+#Question 39:
+
+amt = 10000  
+int = 3.5  
+years = 7  
+  
+future_value  = amt*((1+(0.01*int)) ** years)  
+print(future_value)  
+
+
+#Question 40:
+
+import math
+
+p1 = (1,3)
+
+p2 = (2,4)
+
+distance = math.sqrt( ((p1[0]-p2[0])**2)+((p1[1]-p2[1])**2) )
+
+print(distance)
+
+
+#Question 41:
+
+import os
+
+open('test.txt', 'w')
+
+print(os.path.isfile('test.txt'))
+
+
+#Question 42:
+
+import struct
+print(struct.calcsize("P") * 8)
+
+#Question 43:
+
+import platform
+import os
+print(os.name)
+print(platform.system())
+print(platform.release())
+
+
+#Question 44:
+
+import site; 
+print(site.getsitepackages())
+
+#Question 45:
+
+from subprocess import call
+call(["ls", "-l"])
+
+#Question 45:
+
+
+
