@@ -1,2 +1,3 @@
-from subprocess import call
-call(["ls", "-l"])
+import shutil
+
+print(shutil.get_terminal_size())

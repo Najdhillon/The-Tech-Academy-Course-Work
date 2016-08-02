@@ -473,7 +473,79 @@ print(site.getsitepackages())
 from subprocess import call
 call(["ls", "-l"])
 
-#Question 45:
+#Question 46:
 
+import os
+print(os.path.realpath(__file__))
+
+
+#Question 47:
+
+import multiprocessing
+print(multiprocessing.cpu_count())
+
+#Question 48:
+
+n = "1.2"
+print(float(n))
+print(int(float(n)))
+
+#Question 49:
+
+from os import listdir
+from os.path import isfile, join
+files_list = [f for f in listdir('/Users/Naj/Documents/The-Tech-Academy-Course-Work') if isfile(join('/Users/Naj/Documents/The-Tech-Academy-Course-Work', f))]
+print(files_list);
+
+
+#Question 50:
+
+for i in range(0,10):
+
+    print('.', end="")
+
+#Question 51:
+
+import cProfile
+def sum():
+    print(1+0)
+cProfile.run('sum()')
+
+#Question 52:
+
+from __future__ import print_function
+import sys
+
+def eprint(*args, **kwargs):
+
+    print(*args, file=sys.stderr, **kwargs)
+
+
+eprint("tes", "test", "est", sep="---")
+
+          
+#Question 53:
+
+import os
+
+print(os.environ['HOME'])
+
+
+#Question 54:
+
+import getpass
+print(getpass.getuser())
+
+#Question 55:
+
+import socket
+
+print(socket.gethostbyname(socket.gethostname()))
+
+#Question 56:
+
+import shutil
+
+print(shutil.get_terminal_size())
 
 
