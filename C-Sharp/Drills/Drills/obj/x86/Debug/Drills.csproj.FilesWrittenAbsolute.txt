@@ -1,0 +1,5 @@
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/Drills/Drills/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/Drills/Drills/bin/Debug/Drills.exe.mdb
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/Drills/Drills/bin/Debug/Drills.exe
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/Drills/Drills/obj/x86/Debug/Drills.exe
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/Drills/Drills/obj/x86/Debug/Drills.exe.mdb
