@@ -3,8 +3,6 @@
 namespace Drills
 {
 
-
-
 	class football
 	{
 		public string playerFirstName;
@@ -52,6 +50,33 @@ namespace Drills
 		}
 	}
 
+	//Derived class
+
+	class Shape
+	{
+		public void setWidth(int w)
+		{
+			width = w;
+		}
+
+		public void setHeight(int h)
+		{
+			height = h;
+		}
+
+		public int width;
+		public int height;
+	}
+
+	class Square : Shape
+
+	{
+		public int getArea()
+		{
+			return (width * height);
+		}
+	}
+
 	class MainClass
 	{
 		public static void Main (string[] args)
@@ -73,6 +98,16 @@ namespace Drills
 
 			A ac = new C();
 			ac.Y();
+
+			//derived class example
+
+
+			Square squ = new Square();
+
+			squ.setWidth(2);
+			squ.setHeight(2);
+
+			Console.WriteLine(squ.getArea());
 
 		}
 
