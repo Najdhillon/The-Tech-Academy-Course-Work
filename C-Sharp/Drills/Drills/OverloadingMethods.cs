@@ -77,6 +77,16 @@ namespace Drills
 		}
 	}
 
+	// access modifier
+
+	class Sam
+	{
+		public int x;
+		protected int weight;
+		internal 
+	}
+
+
 	class MainClass
 	{
 		public static void Main (string[] args)
