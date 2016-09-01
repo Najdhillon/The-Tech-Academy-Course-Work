@@ -1,1 +1,20 @@
-﻿<Properties StartupItem="sealedclass/sealedclass.csproj" />
+﻿<Properties StartupItem="sealedclass/sealedclass.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="sealedclass/Program.cs">
+    <Files>
+      <File FileName="sealedclass/Program.cs" Line="17" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="sealedclass" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.sealedclass PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
