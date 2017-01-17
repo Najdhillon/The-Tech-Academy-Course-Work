@@ -1,0 +1,5 @@
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/multiDelegates/multiDelegates/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/multiDelegates/multiDelegates/bin/Debug/multiDelegates.exe.mdb
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/multiDelegates/multiDelegates/bin/Debug/multiDelegates.exe
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/multiDelegates/multiDelegates/obj/x86/Debug/multiDelegates.exe
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/multiDelegates/multiDelegates/obj/x86/Debug/multiDelegates.exe.mdb

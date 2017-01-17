@@ -1,0 +1,5 @@
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/abstractClasss/abstractClasss/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/abstractClasss/abstractClasss/bin/Debug/abstractClasss.exe.mdb
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/abstractClasss/abstractClasss/bin/Debug/abstractClasss.exe
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/abstractClasss/abstractClasss/obj/x86/Debug/abstractClasss.exe
+/Users/Naj/Documents/The-Tech-Academy-Course-Work/C-Sharp/abstractClasss/abstractClasss/obj/x86/Debug/abstractClasss.exe.mdb

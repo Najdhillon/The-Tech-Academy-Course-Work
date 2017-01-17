@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="abstractClasss/abstractClasss.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="abstractClasss/Program.cs">
+    <Files>
+      <File FileName="abstractClasss/Program.cs" Line="42" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.abstractClasss PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
